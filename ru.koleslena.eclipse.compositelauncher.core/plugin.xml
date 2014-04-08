@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="ru.koleslena.eclipse.compositelauncher.core.CompositeLaunchDelegate"
+            id="ru.koleslena.eclipse.compositelauncher.core.launchConfigurationType"
+            modes="run,debug"
+            name="CompositeLauncher"
+            public="true">
+      </launchConfigurationType>
+   </extension>
+
+</plugin>
