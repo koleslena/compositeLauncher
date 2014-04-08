@@ -8,6 +8,8 @@ import org.eclipse.debug.core.ILaunchConfigurationType;
 import org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationTreeContentProvider;
 import org.eclipse.swt.widgets.Shell;
 
+import ru.koleslena.eclipse.compositelauncher.ui.CompositeLauncherUIPlugin;
+
 /**
  * @author koleslena
  *
@@ -36,7 +38,7 @@ public class CompositeLaunchConfigurationTreeContentProvider extends
 		for(Object ltobj: super.getElements(inputElement)) {
 			ILaunchConfigurationType lt = (ILaunchConfigurationType)ltobj;
 			if(lt.isPublic() && lt.supportsMode(mode) && hasChildren(lt)
-				&& !lt.getIdentifier().equals("ru.koleslena.eclipse.compositelauncher.core.launchConfigurationType")) {
+				&& !lt.getIdentifier().equals(CompositeLauncherUIPlugin.COMPOSITE_LAUNCH_TYPE)) {
 				list.add(lt);
     	  	}
 		}
