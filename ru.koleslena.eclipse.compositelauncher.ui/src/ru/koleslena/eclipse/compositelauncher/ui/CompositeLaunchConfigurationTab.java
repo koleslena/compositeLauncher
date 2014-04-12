@@ -13,6 +13,7 @@ import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.debug.ui.AbstractLaunchConfigurationTab;
 import org.eclipse.debug.ui.DebugUITools;
 import org.eclipse.debug.ui.ILaunchConfigurationDialog;
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.CheckStateChangedEvent;
 import org.eclipse.jface.viewers.CheckboxTreeViewer;
 import org.eclipse.jface.viewers.ColumnLabelProvider;
@@ -29,6 +30,7 @@ import org.eclipse.jface.viewers.ViewerSorter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.layout.FormLayout;
@@ -40,6 +42,7 @@ import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.ContainerCheckedTreeViewer;
 import org.eclipse.ui.model.WorkbenchViewerComparator;
+import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 import ru.koleslena.eclipse.compositelauncher.core.model.CompositeConfiguration;
 import ru.koleslena.eclipse.compositelauncher.ui.control.CompositeLaunchConfigurationTreeContentProvider;
@@ -54,6 +57,8 @@ import ru.koleslena.eclipse.compositelauncher.util.CompositeUtil;
  */
 public class CompositeLaunchConfigurationTab extends
 		AbstractLaunchConfigurationTab {
+	
+	private static String IMAGE_URL = "icons/sample.gif";
 	
 	private static final String TAB_NAME = "Composite";
 	
@@ -71,9 +76,30 @@ public class CompositeLaunchConfigurationTab extends
 	private TableViewer selectedTableViewer;
 	private CheckboxTreeViewer viewer;
 	
+	private Image tabImage = null;
+	
 	public CompositeLaunchConfigurationTab(ILaunchConfigurationDialog dialog) {
 		setLaunchConfigurationDialog(dialog);
 		model = new CompositeModel(levelComparator);
+	}
+	
+	@Override
+	public Image getImage() {
+		if(tabImage == null) {
+			ImageDescriptor id = AbstractUIPlugin.imageDescriptorFromPlugin(CompositeLauncherUIPlugin.COMPOSITE_UI, IMAGE_URL);
+			if (id != null) {
+				tabImage = id.createImage();
+			}
+		}
+		return tabImage;
+	}
+	
+	@Override
+	public void dispose() {
+		if(tabImage != null) {
+			tabImage.dispose();
+		}
+		super.dispose();
 	}
 	
 	@Override

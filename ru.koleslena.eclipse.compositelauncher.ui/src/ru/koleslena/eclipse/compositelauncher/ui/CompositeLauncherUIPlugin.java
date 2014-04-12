@@ -9,6 +9,7 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 public class CompositeLauncherUIPlugin extends AbstractUIPlugin {
 
 	public static final String COMPOSITE_LAUNCH_TYPE = "ru.koleslena.eclipse.compositelauncher.core.launchConfigurationType";
+	public static final String COMPOSITE_UI = "ru.koleslena.eclipse.compositelauncher.ui";
 	
 	private static CompositeLauncherUIPlugin plugin;
 	

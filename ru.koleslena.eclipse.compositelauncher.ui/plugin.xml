@@ -9,5 +9,13 @@
             type="ru.koleslena.eclipse.compositelauncher.core.launchConfigurationType">
       </launchConfigurationTabGroup>
    </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+      <launchConfigurationTypeImage
+            configTypeID="ru.koleslena.eclipse.compositelauncher.core.launchConfigurationType"
+            icon="icons/sample.gif"
+            id="ru.koleslena.eclipse.compositelauncher.ui.launchConfigurationTypeImage1">
+      </launchConfigurationTypeImage>
+   </extension>
 
 </plugin>
