@@ -1,11 +1,12 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: compositelauncher.core
+Bundle-Name: ru.koleslena.eclipse.compositelauncher.core
 Bundle-SymbolicName: ru.koleslena.eclipse.compositelauncher.core;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.0.SNAPSHOT
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.debug.core,
  org.eclipse.core.runtime
 Export-Package: ru.koleslena.eclipse.compositelauncher.core,
  ru.koleslena.eclipse.compositelauncher.core.model,
  ru.koleslena.eclipse.compositelauncher.util
+Bundle-ClassPath: .

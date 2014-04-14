@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: compositeLauncher
+Bundle-Name: ru.koleslena.eclipse.compositelauncher.ui
 Bundle-SymbolicName: ru.koleslena.eclipse.compositelauncher.ui;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.0.SNAPSHOT
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.debug.core,
  org.eclipse.debug.ui,
@@ -13,3 +13,4 @@ Require-Bundle: org.eclipse.debug.core,
  org.eclipse.ui.workbench,
  org.eclipse.ui.ide;bundle-version="3.7.0",
  ru.koleslena.eclipse.compositelauncher.core;bundle-version="1.0.0"
+Bundle-ClassPath: .
